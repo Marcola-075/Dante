@@ -1,0 +1,76 @@
+/*
+** EPITECH PROJECT, 2018
+** my.h
+** File description:
+** my.h
+*/
+
+#ifndef MY_H
+#define MY_H
+
+#include <stddef.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <SFML/Graphics.h>
+#include <SFML/Audio.h>
+
+enum state_game
+{
+    MENU,
+    GAME,
+};
+
+typedef struct sp_base {
+    sfTexture* obj;
+    sfSprite* obj_sp;
+    sfVector2f pos;
+    sfIntRect rect;
+} sp_base;
+
+typedef struct menu {
+}menu;
+
+typedef struct game{
+    sfClock *clock;
+    float sec;
+    int map_px;
+    int map_py;
+    int player_px;
+    int player_py;
+    sp_base player;
+    sp_base **map;
+    char **base_map;
+}game;
+
+typedef struct all {
+    menu mn_game;
+    game pl_game;
+    int state_game;
+} all;
+
+int my_strlen(char const *str);
+void my_usage(void);
+int my_strcmp(char const *sone, char const *stwo);
+int my_putstr(char const *str);
+int    my_getnbr(char const *str);
+int    my_put_nbr(int nb);
+void my_puttab(char **tab, char sep);
+char *my_realloc(char *str, char *str_two, int i, int y);
+int my_tablen(char **tab);
+char **put_in_tab(char *str, char sep);
+void start_it(void);
+void my_menu(sfRenderWindow* window, sfEvent event, all *gm, int *start);
+void my_game(sfRenderWindow* window, sfEvent event, all *gm, int *start);
+char *my_cat(char *filepath);
+struct sp_base create_sp_base(const char *path, sfVector2f pos, sfIntRect rect);
+char **map_start(game *gm);
+sp_base **map_create(game *gm);
+void disp_map(sfRenderWindow* window, game *pl);
+sp_base player_sp(sp_base back);
+void disp_game(sfRenderWindow* window, game *pl);
+void go_down(game *pl);
+void go_up(game *pl);
+void go_left(game *pl);
+void go_right(game *pl);
+float my_clock(game *object);
+#endif
