@@ -5,28 +5,16 @@
 ## CPD10ysk01
 ##
 
-SRC	=	main.c
-
-OBJ	=	$(SRC:.c=.o)
-
-NAME	=	bin_name
-
-CFLAGS	=	-I ./include
-
-LIB	=	-L ./lib/ -lmy
-
-all:	$(NAME)
-
-$(NAME):	$(OBJ)
-		make -sC ./lib/my/
-		gcc -o $(NAME) $(OBJ) $(LIB)
+all:
+	make -sC ./generator_folder
+	make -sC ./solver_folder
 
 clean:
-	rm -f $(OBJ)
-	make -sC ./lib/my clean
+	make -sC ./generator_folder clean
+	make -sC ./solver_folder clean
 
 fclean: clean
-	rm -f $(NAME)
-	make -sC ./lib/my fclean
+	make -sC ./generator_folder fclean
+	make -sC ./solver_folder fclean
 
-re: fclean all
+re: 	fclean all
