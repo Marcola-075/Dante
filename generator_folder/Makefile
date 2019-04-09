@@ -5,7 +5,9 @@
 ## CPD10ysk01
 ##
 
-SRC	=	main.c
+SRC	=	main.c		\
+		my_gen.c	\
+		checks.c
 
 OBJ	=	$(SRC:.c=.o)
 

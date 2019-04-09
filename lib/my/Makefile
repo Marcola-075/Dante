@@ -16,7 +16,9 @@ SRC	=	my_strlen.c		\
 		my_realloc.c		\
 		my_tablen.c		\
 		put_in_tab.c		\
-		my_cat.c
+		my_cat.c		\
+		my_str_isalpha.c	\
+		my_str_isnum.c
 
 OBJ	=	$(SRC:.c=.o)
 

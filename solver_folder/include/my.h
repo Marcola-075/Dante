@@ -11,6 +11,11 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <string.h>
 
 int my_strlen(char const *str);
 void my_usage(void);
@@ -23,4 +28,8 @@ char *my_realloc(char *str, char *str_two, int i, int y);
 int my_tablen(char **tab);
 char **put_in_tab(char *str, char sep);
 char *my_cat(char *filepath);
+int    my_str_isalpha(char const *str);
+int    my_str_isnum(char const *str);
+char **check_file(char *filepath);
+
 #endif

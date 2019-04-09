@@ -5,7 +5,8 @@
 ## CPD10ysk01
 ##
 
-SRC	=	main.c
+SRC	=	main.c		\
+		check_file.c
 
 OBJ	=	$(SRC:.c=.o)
 
