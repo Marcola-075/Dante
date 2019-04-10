@@ -6,12 +6,11 @@
 ##
 
 SRC	=	main.c		\
-		my_gen.c	\
-		checks.c
+		check_file.c
 
 OBJ	=	$(SRC:.c=.o)
 
-NAME	=	generator
+NAME	=	solver
 
 CFLAGS	=	-I ./include
 
@@ -22,14 +21,13 @@ all:	$(NAME)
 $(NAME):	$(OBJ)
 		make -sC ../lib/my/
 		gcc -o $(NAME) $(OBJ) $(LIB)
-		mv $(NAME) ../
 
 clean:
 	rm -f $(OBJ)
 	make -sC ../lib/my clean
 
 fclean: clean
-	rm -f ../$(NAME)
+	rm -f $(NAME)
 	make -sC ../lib/my fclean
 
 re: fclean all

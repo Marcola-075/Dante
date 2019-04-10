@@ -6,15 +6,15 @@
 ##
 
 all:
-	make -sC ./generator_folder
-	make -sC ./solver_folder
+	make -sC ./generator
+	make -sC ./solver
 
 clean:
-	make -sC ./generator_folder clean
-	make -sC ./solver_folder clean
+	make -sC ./generator clean
+	make -sC ./solver clean
 
 fclean: clean
-	make -sC ./generator_folder fclean
-	make -sC ./solver_folder fclean
+	make -sC ./generator fclean
+	make -sC ./solver fclean
 
 re: 	fclean all

@@ -33,5 +33,6 @@ int    my_str_isalpha(char const *str);
 int    my_str_isnum(char const *str);
 void my_gen(int x, int y, int perfect);
 int check_nbr(int ac, char **av);
+int my_random(int nb_max);
 
 #endif

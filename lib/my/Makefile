@@ -18,7 +18,8 @@ SRC	=	my_strlen.c		\
 		put_in_tab.c		\
 		my_cat.c		\
 		my_str_isalpha.c	\
-		my_str_isnum.c
+		my_str_isnum.c		\
+		my_random.c
 
 OBJ	=	$(SRC:.c=.o)
 
