@@ -16,6 +16,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <string.h>
+#include "graph.h"
 
 int my_strlen(char const *str);
 void my_usage(void);
