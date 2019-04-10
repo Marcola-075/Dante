@@ -16,7 +16,7 @@ int main(int ac, char **av)
     if (check_nbr(ac, av) == 84)
         return (84);
     if (ac == 4) {
-        if (strcmp("[perfect]", av[3]) == 0)
+        if (strcmp("perfect", av[3]) == 0)
             perfect = 1;
         else {
             write(2, "Error: the last flag should be empty or [perfect].\n", 51);
