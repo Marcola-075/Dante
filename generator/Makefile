@@ -10,7 +10,8 @@ SRC	=	main.c		\
 		checks.c	\
 		maze_gen.c	\
 		create_list.c	\
-		create_path.c
+		create_path.c	\
+		manage_lklist.c
 
 OBJ	=	$(SRC:.c=.o)
 

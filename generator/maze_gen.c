@@ -21,6 +21,7 @@ char **maze_gen(char **base)
 {
     status stat = ini_struct(stat, base);
     list *fcnt = NULL;
+    stac *list = NULL;
     int i = 1;
 
     while (list_len(&stat) != 0) {
