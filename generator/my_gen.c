@@ -7,13 +7,6 @@
 
 #include "my.h"
 
-char **place_e_o(char **tab, int y, int x)
-{
-    tab[0][0] = 'O';
-    tab[y - 1][x - 1] = 'O';
-    return (tab);
-}
-
 char *my_wall(char *line, int x)
 {
     int i = 0;
@@ -66,7 +59,7 @@ char **base_gen(char **map, int y, int x)
         i = i + 1;
     }
     map[i] = NULL;
-    map = place_e_o(map, y, x);
+    map[0][0] = 'O';
     return (map);
 }
 
@@ -75,5 +68,6 @@ void my_gen(int x, int y, int perfect)
     char **map = NULL;
     
     map = base_gen(map, y, x);
+    map = maze_gen(map);
     my_puttab(map, '\n');
 }

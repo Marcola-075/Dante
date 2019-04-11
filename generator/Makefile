@@ -7,7 +7,10 @@
 
 SRC	=	main.c		\
 		my_gen.c	\
-		checks.c
+		checks.c	\
+		maze_gen.c	\
+		create_list.c	\
+		create_path.c
 
 OBJ	=	$(SRC:.c=.o)
 
