@@ -5,8 +5,8 @@
 ## CPD10ysk01
 ##
 
-SRC	=	main.c		\
-		my_gen.c	\
+SRC	=	main.c			\
+		my_gen.c		\
 		checks.c
 
 OBJ	=	$(SRC:.c=.o)
@@ -15,7 +15,7 @@ NAME	=	generator
 
 CFLAGS	=	-I ./include
 
-LIB	=	-L ../lib/ -lmy
+LIB	=	-L ../lib/my -lmy
 
 all:	$(NAME)
 

@@ -17,6 +17,14 @@
 #include <fcntl.h>
 #include <string.h>
 
+typedef struct checkpoint
+{
+    int x;
+    int y;
+    struct element *next;
+    struct element *prev;
+}checkpoint_t;
+
 int my_strlen(char const *str);
 void my_usage(void);
 int my_strcmp(char const *sone, char const *stwo);
