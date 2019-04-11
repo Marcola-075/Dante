@@ -11,7 +11,8 @@ SRC	=	main.c		\
 		maze_gen.c	\
 		create_list.c	\
 		create_path.c	\
-		manage_lklist.c
+		manage_lklist.c	\
+		place_exit.c
 
 OBJ	=	$(SRC:.c=.o)
 

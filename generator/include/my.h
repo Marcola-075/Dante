@@ -66,5 +66,7 @@ char **go_left(status *stat);
 char **create_path(status *stat, list *fcnt);
 void put_in_list(stac **list, int y, int x);
 void disp_list(stac *list);
+void remove_frst_elem(stac **list);
+char **place_exit_two(char **map);
 
 #endif

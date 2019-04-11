@@ -14,18 +14,7 @@ char **place_exit(char **map)
     int rand = my_random(2);
 
     map[y][x] = '*';
-    if (rand == 0) {
-        if (y - 1 >= 0 && map[y - 1][x] == 'X')
-            map[y - 1][x] = '*';
-        else if (x - 1 >= 0 && map[y][x - 1] == 'X')
-            map[y][x - 1] = '*';
-    }
-    else {
-        if (x - 1 >= 0 && map[y][x - 1] == 'X')
-            map[y][x - 1] = '*';
-        else if (y - 1 >= 0 && map[y - 1][x] == 'X')
-            map[y - 1][x] = '*';
-    }
+    map = place_exit_two(map);
     return (map);
 }
 
@@ -92,5 +81,8 @@ void my_gen(int x, int y, int perfect)
     map = base_gen(map, y, x);
     map = maze_gen(map);
     map = place_exit(map);
+    if (perfect == 1)
+        my_putstr("In progess\n");
+        //map = imperfect_maze(map);
     my_puttab(map, '\n');
 }
