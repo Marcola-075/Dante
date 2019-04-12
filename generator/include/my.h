@@ -71,5 +71,6 @@ char **place_exit_two(char **map);
 int check_exit_line(char *line);
 int check_rigth(char **map);
 char **imperfect_maze(char **map);
+void disp_maze(char **maze);
 
 #endif

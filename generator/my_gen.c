@@ -82,5 +82,5 @@ void my_gen(int x, int y, int perfect)
     map = place_exit(map);
     if (perfect == 0)
         map = imperfect_maze(map);
-    my_puttab(map, '\n');
+    disp_maze(map);
 }

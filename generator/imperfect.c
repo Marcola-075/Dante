@@ -39,6 +39,29 @@ char **destroy_wall(char **map, stac *list, int *nb)
     return (map);
 }
 
+char **special_case(char **map)
+{
+    int y = my_tablen(map);
+    int x = my_strlen(map[0]);
+    char **new_tab = malloc(sizeof(char *) * y + 1);
+    int rand = my_random(2);
+
+    if (y == 2 && x == 2) {
+        new_tab[0] = "**";
+        new_tab[1] = "**";
+        new_tab[2] = NULL;
+        return (new_tab);
+    }
+    if (y == 2 && x > 2) {
+        if (map[1][x - 2] = 'X')
+            map[1][x - 2] = '*';
+        else if (map[0][x - 1] == 'X')
+            map[0][x - 1] = '*';
+            }
+    return (map);
+    
+}
+
 char **imperfect_maze(char **map)
 {
     stac *list = NULL;
@@ -50,7 +73,7 @@ char **imperfect_maze(char **map)
         i = i + 1;
     }
     if (list == NULL)
-        return (map);
+        return (special_case(map));
     while (nb == 0) {
         map = destroy_wall(map, list, &nb);
     }

@@ -13,7 +13,8 @@ SRC	=	main.c		\
 		create_path.c	\
 		manage_lklist.c	\
 		place_exit.c	\
-		imperfect.c
+		imperfect.c	\
+		disp_maze.c
 
 OBJ	=	$(SRC:.c=.o)
 
