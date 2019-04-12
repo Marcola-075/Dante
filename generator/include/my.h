@@ -68,5 +68,7 @@ void put_in_list(stac **list, int y, int x);
 void disp_list(stac *list);
 void remove_frst_elem(stac **list);
 char **place_exit_two(char **map);
+int check_exit_line(char *line);
+int check_rigth(char **map);
 
 #endif

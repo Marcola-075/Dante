@@ -11,7 +11,6 @@ char **place_exit(char **map)
 {
     int y = my_tablen(map) - 1;
     int x = my_strlen(map[y]) - 1;
-    int rand = my_random(2);
 
     map[y][x] = '*';
     map = place_exit_two(map);
@@ -81,8 +80,7 @@ void my_gen(int x, int y, int perfect)
     map = base_gen(map, y, x);
     map = maze_gen(map);
     map = place_exit(map);
-    if (perfect == 1)
+    if (perfect == 0)
         my_putstr("In progess\n");
-        //map = imperfect_maze(map);
     my_puttab(map, '\n');
 }
