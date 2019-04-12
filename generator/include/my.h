@@ -70,5 +70,6 @@ void remove_frst_elem(stac **list);
 char **place_exit_two(char **map);
 int check_exit_line(char *line);
 int check_rigth(char **map);
+char **imperfect_maze(char **map);
 
 #endif

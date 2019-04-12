@@ -10,13 +10,6 @@
 #include <stdio.h>
 #include "my.h"
 
-/*struct stac *create_list(void)
-{
-    stac *list = NULL;
-
-    return (list);
-    }*/
-
 void put_in_list(stac **list, int y, int x)
 {
     stac *new = malloc(sizeof(*new));

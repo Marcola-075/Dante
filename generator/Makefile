@@ -12,7 +12,8 @@ SRC	=	main.c		\
 		create_list.c	\
 		create_path.c	\
 		manage_lklist.c	\
-		place_exit.c
+		place_exit.c	\
+		imperfect.c
 
 OBJ	=	$(SRC:.c=.o)
 

@@ -81,6 +81,6 @@ void my_gen(int x, int y, int perfect)
     map = maze_gen(map);
     map = place_exit(map);
     if (perfect == 0)
-        my_putstr("In progess\n");
+        map = imperfect_maze(map);
     my_puttab(map, '\n');
 }
