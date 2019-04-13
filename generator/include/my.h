@@ -66,5 +66,11 @@ char **go_left(status *stat);
 char **create_path(status *stat, list *fcnt);
 void put_in_list(stac **list, int y, int x);
 void disp_list(stac *list);
+void remove_frst_elem(stac **list);
+char **place_exit_two(char **map);
+int check_exit_line(char *line);
+int check_rigth(char **map);
+char **imperfect_maze(char **map);
+void disp_maze(char **maze);
 
 #endif
