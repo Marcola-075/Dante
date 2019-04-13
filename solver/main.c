@@ -35,6 +35,5 @@ int main(int ac, char **av)
     map = check_file(av[1]);
     if (map == NULL)
         return (84);
-    find_path
     return (0);
 }

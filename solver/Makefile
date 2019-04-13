@@ -6,8 +6,6 @@
 ##
 
 SRC	=	main.c		\
-		solve_it.c	\
-		find_the_way.c	\
 		check_file.c
 
 OBJ	=	$(SRC:.c=.o)
