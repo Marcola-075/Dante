@@ -29,7 +29,7 @@ char **destroy_wall(char **map, stac *list, int *nb)
 
     new = list;
     while (new != NULL) {
-        rand = my_random(5);
+        rand = my_random(4);
         if (rand == 1) {
             map[new->y][new->x] = '*';
             (*nb) = (*nb) + 1;
