@@ -7,11 +7,26 @@
 
 #include "my.h"
 
-char **place_e_o(char **tab, int y, int x)
+char **place_exit(char **map)
 {
-    tab[0][0] = 'O';
-    tab[y - 1][x - 1] = 'O';
-    return (tab);
+    int y = my_tablen(map) - 1;
+    int x = my_strlen(map[y]) - 1;
+    int rand = my_random(2);
+
+    map[y][x] = '*';
+    if (rand == 0) {
+        if (y - 1 >= 0 && map[y - 1][x] == 'X')
+            map[y - 1][x] = '*';
+        else if (x - 1 >= 0 && map[y][x - 1] == 'X')
+            map[y][x - 1] = '*';
+    }
+    else {
+        if (x - 1 >= 0 && map[y][x - 1] == 'X')
+            map[y][x - 1] = '*';
+        else if (y - 1 >= 0 && map[y - 1][x] == 'X')
+            map[y - 1][x] = '*';
+    }
+    return (map);
 }
 
 char *my_wall(char *line, int x)
@@ -35,7 +50,7 @@ char *my_pass(char *line, int x)
     line = malloc(sizeof(char) * (x + 1));
     while (i != x) {
         if (pass == 0) {
-            line[i] = '*';
+            line[i] = 'O';
             pass = 1;
         }
         else {
@@ -66,7 +81,7 @@ char **base_gen(char **map, int y, int x)
         i = i + 1;
     }
     map[i] = NULL;
-    map = place_e_o(map, y, x);
+    map[0][0] = '*';
     return (map);
 }
 
@@ -75,5 +90,7 @@ void my_gen(int x, int y, int perfect)
     char **map = NULL;
     
     map = base_gen(map, y, x);
+    map = maze_gen(map);
+    map = place_exit(map);
     my_puttab(map, '\n');
 }

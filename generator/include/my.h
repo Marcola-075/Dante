@@ -18,6 +18,28 @@
 #include <string.h>
 #include "graph.h"
 
+typedef struct stac stac;
+struct stac
+{
+    int y;
+    int x;
+    stac *next;
+};
+
+typedef struct status
+{
+    int x;
+    int y;
+    int x_max;
+    int y_max;
+    char **map;
+}status;
+
+typedef struct list
+{
+    char **(*fonc)(status *stat);
+} list;
+
 int my_strlen(char const *str);
 void my_usage(void);
 int my_strcmp(char const *sone, char const *stwo);
@@ -33,5 +55,16 @@ int    my_str_isalpha(char const *str);
 int    my_str_isnum(char const *str);
 void my_gen(int x, int y, int perfect);
 int check_nbr(int ac, char **av);
+int my_random(int nb_max);
+char **maze_gen(char **base);
+list *create_list(list *fcnt, status stat);
+int list_len(status *stat);
+char **go_down(status *stat);
+char **go_up(status *stat);
+char **go_right(status *stat);
+char **go_left(status *stat);
+char **create_path(status *stat, list *fcnt);
+void put_in_list(stac **list, int y, int x);
+void disp_list(stac *list);
 
 #endif

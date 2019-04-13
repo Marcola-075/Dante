@@ -17,13 +17,13 @@
 #include <fcntl.h>
 #include <string.h>
 
-typedef struct checkpoint
+typedef struct stac stac;
+struct stac
 {
-    int x;
     int y;
-    struct element *next;
-    struct element *prev;
-}checkpoint_t;
+    int x;
+    stac *next;
+};
 
 int my_strlen(char const *str);
 void my_usage(void);

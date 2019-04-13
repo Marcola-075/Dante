@@ -7,6 +7,21 @@
 
 #include "my.h"
 
+int check_path(char **maze, char **av)
+{
+    int x = 0;
+    int y = 0;
+    int n = my_getnbr(av[1]);
+    int i = my_getnbr(av[2]);
+
+    while (maze[y][x] != maze[i][n]) {
+	if (x < 0 || y < 0 || x > n || y > i)
+            return (84);
+	if (x == n && y == i)
+            return (0);
+    }
+}
+
 int main(int ac, char **av)
 {
     char **map = NULL;
@@ -20,5 +35,6 @@ int main(int ac, char **av)
     map = check_file(av[1]);
     if (map == NULL)
         return (84);
+    find_path
     return (0);
 }
