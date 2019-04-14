@@ -34,7 +34,7 @@ void disp_list(stac *list)
     nb = list;
     while (nb != NULL) {
         my_put_nbr(nb->y);
-        my_putstr("//");
+        my_putstr("/");
         my_put_nbr(nb->x);
         my_putstr("-> ");
         nb = nb->next;

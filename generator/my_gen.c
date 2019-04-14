@@ -55,7 +55,7 @@ char **base_gen(char **map, int y, int x)
 {
     int i = 0;
     int pass = 0;
-    
+
     map = malloc(sizeof(char *) * (y + 1));
     while (i != y) {
         if (pass == 0) {
@@ -76,7 +76,7 @@ char **base_gen(char **map, int y, int x)
 void my_gen(int x, int y, int perfect)
 {
     char **map = NULL;
-    
+
     map = base_gen(map, y, x);
     map = maze_gen(map);
     map = place_exit(map);

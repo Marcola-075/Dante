@@ -10,7 +10,7 @@
 int check_line(char *line, int len)
 {
     int i = 0;
-    
+
     if (my_strlen(line) != len)
         return (-1);
     while (line[i] != '\0') {
@@ -24,7 +24,7 @@ int check_line(char *line, int len)
 char **check_map(char **map, char *strmap)
 {
     int i = 0;
-    
+
     if (strmap[0] == '\0') {
         write(2, "Error: this map is empty.\n", 26);
         return (NULL);
@@ -55,7 +55,8 @@ char **check_file(char *filepath)
     }
     tab = put_in_tab(my_cat(filepath), '\n');
     tab = check_map(tab, my_cat(filepath));
-    if (tab[0][0] != '*' || tab[my_tablen(tab) - 1][my_strlen(tab[0]) -1 ] != '*') {
+    if (tab[0][0] != '*' ||
+        tab[my_tablen(tab) - 1][my_strlen(tab[0]) -1 ] != '*') {
         my_putstr("no solution found\n");
         return (NULL);
     }

@@ -19,7 +19,7 @@ int list_len(status *stat)
         len += 1;
     if (stat->map[stat->y][stat->x + 1] != '\0' && stat->map[stat->y]
         [stat->x + 2] != '\0' && stat->map[stat->y][stat->x + 2] == 'O')
-	len += 1;
+        len += 1;
     if (stat->x - 1 > 0 && stat->x - 2 >= 0 &&
         stat->map[stat->y][stat->x - 2] == 'O')
         len += 1;
@@ -29,14 +29,14 @@ int list_len(status *stat)
 list *create_list_two(list *fcnt, status stat, int i)
 {
     if (stat.map[stat.y][stat.x + 1] != '\0' && stat.map[stat.y]
-	[stat.x + 2] != '\0' && stat.map[stat.y][stat.x + 2] == 'O') {
+        [stat.x + 2] != '\0' && stat.map[stat.y][stat.x + 2] == 'O') {
         fcnt[i].fonc = &go_right;
         i += 1;
     }
     if (stat.x - 1 > 0 && stat.x - 2 >= 0 &&
         stat.map[stat.y][stat.x - 2] == 'O') {
         fcnt[i].fonc = &go_left;
-	i += 1;
+        i += 1;
     }
     return (fcnt);
 }
@@ -52,7 +52,7 @@ list *create_list(list *fcnt, status stat)
         i += 1;
     }
     if (stat.y - 1 > 0 && stat.y - 2 >= 0 &&
-	stat.map[stat.y - 2][stat.x] == 'O') {
+        stat.map[stat.y - 2][stat.x] == 'O') {
         fcnt[i].fonc = &go_up;
         i += 1;
     }

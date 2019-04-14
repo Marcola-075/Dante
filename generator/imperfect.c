@@ -59,7 +59,6 @@ char **special_case(char **map)
             map[0][x - 1] = '*';
             }
     return (map);
-    
 }
 
 char **imperfect_maze(char **map)
@@ -67,7 +66,7 @@ char **imperfect_maze(char **map)
     stac *list = NULL;
     int i = 0;
     int nb = 0;
-    
+
     while (map[i] != NULL) {
         check_build(map, &list, i);
         i = i + 1;

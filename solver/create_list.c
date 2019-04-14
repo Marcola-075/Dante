@@ -18,7 +18,7 @@ int list_len(status *stat)
         len += 1;
     if (stat->map[stat->y][stat->x + 1] != '\0' &&
         stat->map[stat->y][stat->x + 1] == '*')
-	len += 1;
+        len += 1;
     if (stat->x - 1 >= 0 && stat->map[stat->y][stat->x - 1] == '*')
         len += 1;
     return (len);
@@ -34,7 +34,7 @@ list *create_list_two(list *fcnt, status stat, int i)
     if (stat.x - 1 >= 0 &&
         stat.map[stat.y][stat.x - 1] == '*') {
         fcnt[i].fonc = &go_left;
-	i += 1;
+        i += 1;
     }
     return (fcnt);
 }

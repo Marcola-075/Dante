@@ -38,25 +38,25 @@ void final_solver(char **map, status stat)
 
 void my_solver(char **map)
 {
-    status stat = ini_struct(stat, map);
+    status stt = ini_struct(stt, map);
     list *fcnt = NULL;
     stac *list = NULL;
 
-    while (stat.y != (my_tablen(map) - 1) && stat.x != (my_strlen(map[0]) - 1)) {
-        if (list_len(&stat) != 0) {
-            fcnt = create_list(fcnt, stat);
-            stat.map = create_path(&stat, fcnt);
-            put_in_list(&list, stat.y, stat.x, 0);
+    while (stt.y != (my_tablen(map) - 1) && stt.x != (my_strlen(map[0]) - 1)) {
+        if (list_len(&stt) != 0) {
+            fcnt = create_list(fcnt, stt);
+            stt.map = create_path(&stt, fcnt);
+            put_in_list(&list, stt.y, stt.x, 0);
         }
         else if (list != NULL) {
-            stat.map[stat.y][stat.x] = '.';
+            stt.map[stt.y][stt.x] = '.';
             remove_frst_elem(&list);
-            give_new_pos(&stat, list);
+            give_new_pos(&stt, list);
         }
         else {
             my_putstr("no solution found\n");
             return;
         }
     }
-    final_solver(map, stat);
+    final_solver(map, stt);
 }

@@ -42,8 +42,9 @@ char **place_exit_two(char **map)
     int y = my_tablen(map) - 1;
     int x = my_strlen(map[y]) - 1;
     int rand = my_random(2);
-    
-    if (check_exit_line(map[my_tablen(map) - 1]) == 84 && check_rigth(map) == 84) {
+
+    if (check_exit_line(map[my_tablen(map) - 1]) == 84 &&
+        check_rigth(map) == 84) {
         if (rand == 0 && y - 1 >= 0)
             map[y - 1][x] = '*';
         else if (rand == 0 && x - 1 >= 0)

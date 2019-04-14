@@ -41,7 +41,7 @@ char *my_cat(char *filepath)
     int rd = 1;
     char *out = "";
     char buff[2];
-    
+
     if (filepath == NULL)
         return (NULL);
     a = open(filepath, O_RDONLY);
