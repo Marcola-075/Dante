@@ -20,7 +20,7 @@ OBJ	=	$(SRC:.c=.o)
 
 NAME	=	generator
 
-CFLAGS	=	-I ./include
+CFLAGS	=	-I ./include -g
 
 LIB	=	-L ../lib/ -lmy
 

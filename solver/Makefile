@@ -6,7 +6,13 @@
 ##
 
 SRC	=	main.c		\
-		check_file.c
+		check_file.c	\
+		my_solver.c	\
+		create_list.c	\
+		create_path.c	\
+		manage_lklist.c	\
+		clear_map.c	\
+		disp_maze.c
 
 OBJ	=	$(SRC:.c=.o)
 

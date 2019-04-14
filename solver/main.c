@@ -20,5 +20,6 @@ int main(int ac, char **av)
     map = check_file(av[1]);
     if (map == NULL)
         return (84);
+    my_solver(map);
     return (0);
 }

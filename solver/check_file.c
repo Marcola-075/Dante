@@ -14,7 +14,7 @@ int check_line(char *line, int len)
     if (my_strlen(line) != len)
         return (-1);
     while (line[i] != '\0') {
-        if (line[i] != 'X' && line[i] != '.')
+        if (line[i] != 'X' && line[i] != '*')
             return (-1);
         i = i + 1;
     }
@@ -43,7 +43,7 @@ char **check_file(char *filepath)
 {
     int fd = 0;
     char **tab = NULL;
-    
+
     if (filepath == NULL) {
         write(2, "Error: you must give a map.\n", 28);
         return (NULL);
@@ -55,5 +55,10 @@ char **check_file(char *filepath)
     }
     tab = put_in_tab(my_cat(filepath), '\n');
     tab = check_map(tab, my_cat(filepath));
+    if (tab[0][0] != '*' || tab[my_tablen(tab) - 1][my_strlen(tab[0]) -1 ] != '*') {
+        my_putstr("no solution found\n");
+        return (NULL);
+    }
+    tab[0][0] = 'o';
     return (tab);
 }
