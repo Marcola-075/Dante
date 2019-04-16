@@ -18,7 +18,7 @@ OBJ	=	$(SRC:.c=.o)
 
 NAME	=	solver
 
-CFLAGS	=	-I ./include
+CFLAGS	=	-I ./include -g
 
 LIB	=	-L ../lib/ -lmy
 

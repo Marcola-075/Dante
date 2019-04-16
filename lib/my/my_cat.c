@@ -37,7 +37,7 @@ char *add_str(char *one, char *two)
 
 char *my_cat(char *filepath)
 {
-    int a;
+    int a = 0;
     int rd = 1;
     char *out = "";
     char buff[2];
@@ -52,6 +52,7 @@ char *my_cat(char *filepath)
             close(a);
             return (out);
         }
+        buff[rd] = '\0';
         out = add_str(out, buff);
     }
     close(a);

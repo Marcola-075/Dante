@@ -42,7 +42,7 @@ void my_solver(char **map)
     list *fcnt = NULL;
     stac *list = NULL;
 
-    while (stt.y != (my_tablen(map) - 1) && stt.x != (my_strlen(map[0]) - 1)) {
+    while (stt.y != (my_tablen(map) - 1) || stt.x != (my_strlen(map[0]) - 1)) {
         if (list_len(&stt) != 0) {
             fcnt = create_list(fcnt, stt);
             stt.map = create_path(&stt, fcnt);
