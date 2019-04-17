@@ -37,6 +37,23 @@ char **go_left(status *stat)
 
 char **create_path(status *stat, list *fcnt)
 {
-    stat->map = fcnt[my_random(list_len(stat))].fonc(stat);
+    if (stat->map[stat->y + 1] != NULL &&
+        stat->map[stat->y + 1][stat->x] == '*') {
+        stat->map = go_down(stat);
+        return (stat->map);
+    }
+    if (stat->map[stat->y][stat->x + 1] != '\0' &&
+        stat->map[stat->y][stat->x + 1] == '*') {
+        stat->map = go_right(stat);
+        return (stat->map);
+    }
+    if (stat->y - 1 >= 0 && stat->map[stat->y - 1][stat->x] == '*') {
+        stat->map = go_up(stat);
+        return (stat->map);
+    }
+    if (stat->x - 1 >= 0 && stat->map[stat->y][stat->x - 1] == '*') {
+        stat->map = go_left(stat);
+        return (stat->map);
+    }
     return (stat->map);
 }
