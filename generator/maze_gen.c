@@ -61,9 +61,9 @@ char **maze_gen(char **base)
     stac *list = NULL;
     int i = 1;
 
+    fcnt = create_list(fcnt, stat);
     while (check_end(stat.map) != 0) {
         if (list_len(&stat) != 0) {
-            fcnt = create_list(fcnt, stat);
             stat.map = create_path(&stat, fcnt);
             put_in_list(&list, stat.y, stat.x);
         }

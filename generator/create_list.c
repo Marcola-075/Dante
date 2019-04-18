@@ -26,35 +26,14 @@ int list_len(status *stat)
     return (len);
 }
 
-list *create_list_two(list *fcnt, status stat, int i)
-{
-    if (stat.map[stat.y][stat.x + 1] != '\0' && stat.map[stat.y]
-        [stat.x + 2] != '\0' && stat.map[stat.y][stat.x + 2] == 'O') {
-        fcnt[i].fonc = &go_right;
-        i += 1;
-    }
-    if (stat.x - 1 > 0 && stat.x - 2 >= 0 &&
-        stat.map[stat.y][stat.x - 2] == 'O') {
-        fcnt[i].fonc = &go_left;
-        i += 1;
-    }
-    return (fcnt);
-}
-
 list *create_list(list *fcnt, status stat)
 {
     int i = 0;
 
-    fcnt = malloc(sizeof(list) * (list_len(&stat) + 1));
-    if (stat.map[stat.y + 1] != NULL && stat.map[stat.y + 2] != NULL &&
-        stat.map[stat.y + 2][stat.x] == 'O') {
-        fcnt[i].fonc = &go_down;
-        i += 1;
-    }
-    if (stat.y - 1 > 0 && stat.y - 2 >= 0 &&
-        stat.map[stat.y - 2][stat.x] == 'O') {
-        fcnt[i].fonc = &go_up;
-        i += 1;
-    }
-    return (create_list_two(fcnt, stat, i));
+    fcnt = malloc(sizeof(list) * 5);
+    fcnt[0].fonc = &go_down;
+    fcnt[1].fonc = &go_up;
+    fcnt[2].fonc = &go_right;
+    fcnt[3].fonc = &go_left;
+    return (fcnt);
 }
