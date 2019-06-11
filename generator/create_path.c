@@ -52,7 +52,8 @@ char **create_path(status *stat, list *fcnt)
         if (i == 1 &&stat->y - 1 > 0 && stat->y - 2 >= 0 &&
             stat->map[stat->y - 2][stat->x] == 'O')
             return (fcnt[i].fonc(stat));
-        if (i == 2 && stat->map[stat->y][stat->x + 1] != '\0' && stat->map[stat->y]
+        if (i == 2 && stat->map[stat->y][stat->x + 1] !=
+            '\0' && stat->map[stat->y]
             [stat->x + 2] != '\0' && stat->map[stat->y][stat->x + 2] == 'O')
             return (fcnt[i].fonc(stat));
         if (i == 3 && stat->x - 1 > 0 && stat->x - 2 >= 0 &&
